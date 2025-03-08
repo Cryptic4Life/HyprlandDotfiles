@@ -1,0 +1,132 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": 0,
+
+  "modules-left": [
+    "clock",
+    "custom/separator",
+    "hyprland/workspaces",
+    "custom/separator"
+    ],
+
+  "modules-center": [
+    "hyprland/window"
+  ],
+
+  "modules-right": [
+    "temperature",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "tray",
+    "custom/separator",
+    "custom/powermenu"
+  ],
+  
+  "clock": {
+    // 24 hour
+    "format": "   {:%Hh%M} ",
+    "interval": 60,
+    "tooltip": true,
+    "tooltip-format": "{:%B %d}"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      // 1-10
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      // 11-10
+      "11": "1",
+      "12": "2",
+      "13": "3",
+      "14": "4",
+      "15": "5",
+      "16": "6",
+      "17": "7",
+      "18": "8",
+      "19": "9",
+      "110": "10"
+    }
+  },
+
+  "custom/separator": {
+    "exec": "echo \"|\"",
+    "format": "{}"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+  "hyprland/window": {
+    "format": "{initialTitle}"
+  },
+
+  "temperature": {
+    "format": "{icon} {temperatureC}°C ",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-icons": [
+      "\uf76b",
+      "\uf2c9",
+      "\uf769"
+    ]
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}% ",
+    "format-bluetooth": "{icon}  {volume}% ",
+    "format-bluetooth-muted": "  ",
+    "format-muted": " ",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+    },
+    "on-click-right": "pavucontrol",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+
+  "backlight": {
+    "device": "nvidia_0",
+    "max-length": "4",
+    "format": "{icon} {percent}%",
+    "tooltip-format": "{percent}%",
+    "format-icons": ["🔆"],
+    "on-click": "",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+
+  "battery": {
+    "interval": 1,
+    "max-length": 10,
+    "format": " {icon}  {capacity}% ",
+    "format-charging": "  {capacity}% ",
+    "format-plugged": "  {capacity}% ",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "custom/powermenu": {
+    "format": " \uf011  ",
+    "tooltip": false,
+    "on-click": "exec shutdown now"
+  }
+
+}

@@ -1,0 +1,11 @@
+font="JetBrains Mono"
+width=180
+height=300
+padding=10
+background-color=#222222FF
+border-color=#C6A0F6FF
+border-radius=10
+text-color=#EEEEEEFF
+text-alignment=center
+default-timeout=800
+anchor=center

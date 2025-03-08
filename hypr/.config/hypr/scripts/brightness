@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+get_brightness() {
+    let current=$(brightnessctl get) max=$(brightnessctl max)
+    printf "%.0f\n" $((10**2 * current/max * 100))e-2
+}
+
+inc_brightness() {
+    brightnessctl set 10%+ && notify_user
+}
+
+dec_brightness() {
+    brightnessctl set 10%- && notify_user
+}
+
+notify_user() {
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Brightness : $(get_brightness)%"
+}
+
+if [[ "$1" == "--get" ]]; then
+	get_brightness
+elif [[ "$1" == "--inc" ]]; then
+	inc_brightness
+elif [[ "$1" == "--dec" ]]; then
+	dec_brightness
+fi

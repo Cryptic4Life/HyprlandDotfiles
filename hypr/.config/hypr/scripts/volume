@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+get_volume() {
+    volume=$(pactl get-sink-volume alsa_output.pci-0000_03_00.6.HiFi__Speaker__sink | awk '{print $5}')
+    echo "$volume"    
+}
+
+inc_volume() {
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && notify_user
+}
+
+dec_volume() {
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && notify_user
+}
+
+notify_user() {
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Volume : $(get_volume)"
+}
+
+if [[ "$1" == "--get" ]]; then
+	get_volume
+elif [[ "$1" == "--inc" ]]; then
+	inc_volume
+elif [[ "$1" == "--dec" ]]; then
+	dec_volume
+fi
