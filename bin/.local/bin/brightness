@@ -14,7 +14,7 @@ dec_brightness() {
 }
 
 notify_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Brightness : $(get_brightness)%"
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -h int:value:$(get_brightness) -a "brightness" "Brightness : $(get_brightness)%"
 }
 
 if [[ "$1" == "--get" ]]; then

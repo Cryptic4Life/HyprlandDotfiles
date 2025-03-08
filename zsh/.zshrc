@@ -9,3 +9,5 @@ PROMPT='%F{magenta}%n%f at %F{magenta}%m%f in %F{magenta}%~%f '
 
 # Aliases
 alias ls='ls --color -F'
+
+export PATH="$HOME/.local/bin:$PATH"
