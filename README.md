@@ -2,6 +2,8 @@
 
 This repository stores my Hyprland dotfiles. Feel free to use them however you like!
 
+![desktop showcase](images/showcase.png)
+
 ## Installation
 
 I'm using [**stow**](https://www.gnu.org/software/stow/) to keep all my dotfiles in a single directory. If you want to use these dotfiles in your own machine, install `stow` and run this command inside the cloned directory:
