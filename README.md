@@ -12,7 +12,7 @@ I'm using [**stow**](https://www.gnu.org/software/stow/) to keep all my dotfiles
 stow */
 ```
 
-Stow will create symlinks to the dotfiles in all the appropiate places in the file system! Note that it will not apply wallpapers, themes, or other external assets. You will need to download and set them up separately.
+Stow will create symlinks to the dotfiles in all the appropriate places in the file system! Note that it will not apply wallpapers, themes, or other external assets. You will need to download and set them up separately.
 
 ## Installing specific dotfiles
 
@@ -24,11 +24,16 @@ stow <folder_name>
 
 ## Software I Use
 
-- **[Hyprland](https://github.com/hyprwm/Hyprland)** – Window Manager  
+- **[Hyprland](https://github.com/hyprwm/Hyprland)** – Window Manager 
+
 - **[Rofi](https://github.com/davatorium/rofi)** – Application Launcher  
+
 - **[Waybar](https://github.com/Alexays/Waybar)** – Status Bar  
+
 - **[Mako](https://github.com/emersion/mako)** – Notification Server  
+
 - **[Kitty](https://sw.kovidgoyal.net/kitty/)** – Terminal Emulator  
+
 - **[Zsh](https://www.zsh.org/)** – Shell
 
 ## Wallpapers & Themes
